@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expression Evaluator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Expression Evaluator</h1>
+        <div class="menu">
+            <button onclick="showSection('expression')">Enter Expression</button>
+            <button onclick="showSection('declare')">Declare Variables</button>
+            <button onclick="showSection('symbol-table')">Show Symbol Table</button>
+            <button onclick="visualizeParseTree()">Visualize Parse Tree</button>
+        </div>
+
+        <div id="expression" class="section">
+            <h2>Enter Expression</h2>
+            <input type="text" id="exprInput" placeholder="e.g., x = 5 + 3;">
+            <button onclick="evaluateExpression()">Evaluate</button>
+            <p id="exprResult"></p>
+        </div>
+
+        <div id="declare" class="section" style="display: none;">
+            <h2>Declare Variables</h2>
+            <input type="text" id="declInput" placeholder="e.g., int a, b = 2;">
+            <button onclick="declareVariables()">Declare</button>
+            <p id="declResult"></p>
+        </div>
+
+        <div id="symbol-table" class="section" style="display: none;">
+            <h2>Symbol Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Value</th>
+                        <th>Scope</th>
+                    </tr>
+                </thead>
+                <tbody id="symbolTableBody"></tbody>
+            </table>
+            <button onclick="refreshSymbolTable()">Refresh</button>
+        </div>
+
+        <div id="visualize" class="section" style="display: none;">
+            <h2>Parse Tree</h2>
+            <img id="parseTreeImg" src="" alt="Parse Tree" style="max-width: 100%;">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
